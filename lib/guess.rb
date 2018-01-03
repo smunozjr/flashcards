@@ -12,14 +12,14 @@ class Guess
 def correct?
   # require'pry'; binding.pry
   if @response == card.answer
-     true
+    true
   else
-     false
+    false
   end
 end
 
   def feedback
-    if @response == card.answer
+    if correct?
       "Correct!"
     else
      "Incorrect!"

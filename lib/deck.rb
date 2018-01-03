@@ -5,7 +5,7 @@ class Deck
     @cards = cards
   end
 
-  def card_count
+  def count
     @cards.count
   end
 
