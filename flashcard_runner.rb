@@ -1,11 +1,13 @@
-require_relative './lib/card'
-require_relative './lib/guess'
-require_relative './lib/deck'
-require_relative './lib/round'
-# require_relative './lib/card_generator'
+# require_relative './lib/card'
+# require_relative './lib/guess'
+# require_relative './lib/card_'
+require'./lib/round'
+require './lib/card_generator'
 
+  filename = 'cards.txt'
+  cards = CardGenerator.new(filename).cards
 
-  # cards = CardGenerator.new(cards.txt).cards
-  deck = Deck.new('cards')
-  round = Round.new(deck)
-  round.start
+  puts "Welcome! You're playing with #{} cards."
+  puts "-------------------------------------------------"
+
+  
