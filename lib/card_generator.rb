@@ -1,19 +1,24 @@
 require './lib/card'
 
 class CardGenerator
+  attr_reader :contents,
+              :questions
 
-  contents = File.read('./cards.txt')
-  cards = []
-  card_info = contents.split(/[\n,]/)
-  card_info.each_with_index do |card, index|
-    cards << Card.new(card_info[0], card_info[1])
-    card_info.slice!(0..1)
+  def initialize
+    @contents = ""
+    @questions = []
   end
-  require "pry"; binding.pry
 
+  def load_file(filename)
+    contents = File.read(filename)
+  end
 
-
-
-
+  def build_questions(string)
+    data = string.split("\n")
+    data.map do |pair|
+      data_split = pair.split(",")
+      @questions << Card.new(data_split[0],data_split[1])
+    end
+  end
 
 end
